@@ -1,0 +1,41 @@
+{
+    "$schema": "https:\/\/getcomposer.org\/schema.json",
+    "name": "louhos\/xpl",
+    "description": "Template project with Composer, Pest, Pint and default settings",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.4"
+    },
+    "require-dev": {
+        "pestphp\/pest": "^4.4",
+        "laravel\/pint": "^1.29",
+        "phpstan\/phpstan": "^2.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src\/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests\/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Niko Hujanen",
+            "email": "niko@louhosdigital.fi"
+        }
+    ],
+    "config": {
+        "allow-plugins": {
+            "pestphp\/pest-plugin": true
+        }
+    },
+    "scripts": {
+        "test": "pest",
+        "lint": "pint",
+        "analyze": "phpstan analyze src tests"
+    }
+}
