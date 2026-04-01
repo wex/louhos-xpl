@@ -15,7 +15,10 @@
     "autoload": {
         "psr-4": {
             "Louhos\\Xpl\\": "src/"
-        }
+        },
+        "files": [
+            "src/functions.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
@@ -36,6 +39,6 @@
     "scripts": {
         "test": "pest",
         "lint": "pint",
-        "analyze": "phpstan analyze src tests"
+        "analyze": "phpstan analyze"
     }
 }
