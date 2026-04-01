@@ -1,5 +1,6 @@
 <?php
 
+use function Louhos\Xpl\boink;
 use function Louhos\Xpl\call;
 use function Louhos\Xpl\yoink;
 
@@ -10,6 +11,17 @@ test('yoink', function () {
     };
 
     expect(yoink($object, 'foo'))->toBe('bar');
+});
+
+test('boink', function () {
+    $object = new class
+    {
+        private string $foo = 'bar'; // @phpstan-ignore property.onlyWritten
+    };
+
+    boink($object, 'foo', 'baz');
+
+    expect(yoink($object, 'foo'))->toBe('baz');
 });
 
 test('call', function () {

@@ -11,6 +11,14 @@ function yoink(object $instance, string $property): mixed
 }
 
 /**
+ * Boink a value to private or protected property on an object.
+ */
+function boink(object $instance, string $property, mixed $value): void
+{
+    (fn () => $this->$property = $value)->call($instance);
+}
+
+/**
  * Call a private or protected method on an object.
  *
  * @param  mixed  ...$args
